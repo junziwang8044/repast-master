@@ -27,11 +27,11 @@
 							</li>
 
 							<li>
-								：<input type="text" name="name"/>
+								商品名称：<input type="text" name="name"/>
 							</li>
 
 							<li>
-								：<input type="text" name="pic"/>
+								商品图片：<input type="file" name="pic" />
 							</li>
 
 							<li>
@@ -39,19 +39,39 @@
 							</li>
 
 							<li>
-								删除状态：0->未删除；1->已删除：<input type="text" name="deleteStatus"/>
+								删除状态：
+								<select type="text" name="deleteStatus">
+									<option value="" selected = "selected"></option>
+									<option value="0">未删除</option>
+									<option value="1" >已删除</option>
+								</select>
 							</li>
 
 							<li>
-								上架状态：0->下架；1->上架：<input type="text" name="publishStatus"/>
+								上架状态：
+								<select type="text" name="publishStatus">
+									<option value="" selected = "selected"></option>
+									<option value="0">下架</option>
+									<option value="1" >上架</option>
+								</select>
 							</li>
 
 							<li>
-								新品状态:0->不是新品；1->新品：<input type="text" name="newStatus"/>
+								新品状态：
+								<select type="text" name="newStatus">
+									<option value="" selected = "selected"></option>
+									<option value="0">非新品</option>
+									<option value="1" >新品</option>
+								</select>
 							</li>
 
 							<li>
-								推荐状态；0->不推荐；1->推荐：<input type="text" name="recommandStatus"/>
+								推荐状态：
+								<select type="text" name="recommandStatus">
+									<option value="" selected = "selected"> </option>
+									<option value="0">不推荐</option>
+									<option value="1" >推荐</option>
+								</select>
 							</li>
 
 							<li>
@@ -63,7 +83,7 @@
 							</li>
 
 							<li>
-								：<input type="text" name="price"/>
+								价格：<input type="text" name="price"/>
 							</li>
 
 							<li>
@@ -99,19 +119,24 @@
 							</li>
 
 							<li>
-								商品重量，默认为克：<input type="text" name="weight"/>
+								商品重量(克)：<input type="text" name="weight"/>
 							</li>
 
 							<li>
-								以逗号分割的产品服务：1->无忧退货；2->快速退款；3->免费包邮：<input type="text" name="serviceIds"/>
+								产品服务：<select type="text" name="serviceIds">
+									<option value=""></option>
+									<option value="1" >无忧退货</option>
+									<option value="2">快速退货</option>
+									<option value="3">免费包邮</option>
+								</select>
 							</li>
 
 							<li>
-								：<input type="text" name="keywords"/>
+								关键字：<input type="text" name="keywords"/>
 							</li>
 
 							<li>
-								：<input type="text" name="note"/>
+								商家备注：<input type="text" name="note"/>
 							</li>
 
 							<li>
@@ -119,11 +144,11 @@
 							</li>
 
 							<li>
-								：<input type="text" name="detailTitle"/>
+								详细标题：<input type="text" name="detailTitle"/>
 							</li>
 
 							<li>
-								：<input type="text" name="detailDesc"/>
+								详细描述：<input type="text" name="detailDesc"/>
 							</li>
 
 							<li>
@@ -147,7 +172,16 @@
 							</li>
 
 							<li>
-								促销类型：0->没有促销使用原价;1->使用促销价；2->使用会员价；3->使用阶梯价格；4->使用满减价格；5->限时购：<input type="text" name="promotionType"/>
+								促销类型：
+								<select type="text" name="promotionType">
+									<option value=""></option>
+									<option value="0">没有促销类型使用原价</option>
+									<option value="1">使用促销价</option>
+									<option value="2">使用会员价</option>
+									<option value="3">使用阶梯价格</option>
+									<option value="4">使用满减价格</option>
+									<option value="5">限时购</option>
+								</select>
 							</li>
 
 							<li>
@@ -159,7 +193,12 @@
 							</li>
 
 							<li>
-								币种，0-> 人民币;  1-> 积分：<input type="text" name="currency"/>
+								币种：<select type="text" name="currency">
+									<option value=""></option>
+									<option value="0" >人民币</option>
+									<option value="1">积分</option>
+								</select>
+
 							</li>
 
 							<li>
@@ -236,12 +275,12 @@
 				},
 				{
 					field : 'name', 
-					title : '',
+					title : '商品名称',
 					sortable: true
 				},
 				{
 					field : 'pic', 
-					title : '',
+					title : '商品图片',
 					sortable: true
 				},
 				{
@@ -251,22 +290,22 @@
 				},
 				{
 					field : 'deleteStatus', 
-					title : '删除状态：0->未删除；1->已删除',
+					title : '删除状态',
 					sortable: true
 				},
 				{
 					field : 'publishStatus', 
-					title : '上架状态：0->下架；1->上架',
+					title : '上架状态',
 					sortable: true
 				},
 				{
 					field : 'newStatus', 
-					title : '新品状态:0->不是新品；1->新品',
+					title : '新品状态',
 					sortable: true
 				},
 				{
 					field : 'recommandStatus', 
-					title : '推荐状态；0->不推荐；1->推荐',
+					title : '推荐状态',
 					sortable: true
 				},
 				{
@@ -281,7 +320,7 @@
 				},
 				{
 					field : 'price', 
-					title : '',
+					title : '价格',
 					sortable: true
 				},
 				{
@@ -326,22 +365,22 @@
 				},
 				{
 					field : 'weight', 
-					title : '商品重量，默认为克',
+					title : '商品重量(克)',
 					sortable: true
 				},
 				{
 					field : 'serviceIds', 
-					title : '以逗号分割的产品服务：1->无忧退货；2->快速退款；3->免费包邮',
+					title : '产品服务',
 					sortable: true
 				},
 				{
 					field : 'keywords', 
-					title : '',
+					title : '关键字',
 					sortable: true
 				},
 				{
 					field : 'note', 
-					title : '',
+					title : '商家备注',
 					sortable: true
 				},
 				{
@@ -351,12 +390,12 @@
 				},
 				{
 					field : 'detailTitle', 
-					title : '',
+					title : '详细标题',
 					sortable: true
 				},
 				{
 					field : 'detailDesc', 
-					title : '',
+					title : '详细描述',
 					sortable: true
 				},
 				{
@@ -386,7 +425,7 @@
 				},
 				{
 					field : 'promotionType', 
-					title : '促销类型：0->没有促销使用原价;1->使用促销价；2->使用会员价；3->使用阶梯价格；4->使用满减价格；5->限时购',
+					title : '促销类型',
 					sortable: true
 				},
 				{
@@ -401,7 +440,7 @@
 				},
 				{
 					field : 'currency', 
-					title : '币种，0-> 人民币;  1-> 积分',
+					title : '币种',
 					sortable: true
 				},
 		        {
