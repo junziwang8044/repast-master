@@ -39,7 +39,7 @@ public class ShopInformationController extends BaseController
 	{
 	    return prefix + "/shopInformation";
 	}
-	
+
 	/**
 	 * 查询店铺的基本列表
 	 */
@@ -50,6 +50,7 @@ public class ShopInformationController extends BaseController
 	{
 		startPage();
         List<ShopInformation> list = shopInformationService.selectShopInformationList(shopInformation);
+
 		return getDataTable(list);
 	}
 	

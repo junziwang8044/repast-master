@@ -11,6 +11,10 @@
 					<div class="select-list">
 						<ul>
 							<li>
+								店铺ID：<input type="text" name="id"/>
+							</li>
+
+							<li>
 								店铺所有者ID：<input type="text" name="ownerId"/>
 							</li>
 
@@ -34,19 +38,23 @@
 								地址：<input type="text" name="address"/>
 							</li>
 
-							<li>
-								：<input type="text" name="lng"/>
+							<!--<li>
+								经度：<input type="text" name="lng"/>
 							</li>
 
 							<li>
-								：<input type="text" name="lat"/>
-							</li>
+								纬度：<input type="text" name="lat"/>
+							</li>-->
 
 							<li>
-								是否打烊（手动打烊标示）和营业时间一起使用：<input type="text" name="closed"/>
+								是否打烊：<select type="text" name="closed">
+								<option value="">全部</option>
+								<option value="0">是</option>
+								<option value="1">否</option>
+							</select>
 							</li>
 
-							<li>
+							<!--<li>
 								字符串，如：1-5|10:00-14:00，1-5|17:00-22:00，6-7|9:00-24:00  周和时间用“|”分割，周几到周几用“-”分割，多个设置用“，”分割：<input type="text" name="openTime"/>
 							</li>
 
@@ -56,13 +64,19 @@
 
 							<li>
 								商家实景照片URL，json格式 {realimsg:['http://xxx','http://xxx']}：<input type="text" name="images"/>
-							</li>
+							</li>-->
 
 							<li>
-								0：冻结状态，1：正常，2：违规关闭，3：店铺到期关闭：<input type="text" name="status"/>
+								店铺状态：<select type="text" name="status">
+								<option value="">全部</option>
+								<option value="0">冻结状态</option>
+								<option value="1">正常</option>
+								<option value="2">违规关闭</option>
+								<option value="3">店铺到期关闭</option>
+							</select>
 							</li>
 
-							<li>
+							<!--<li>
 								授权开始时间：<input type="text" name="authStartTime"/>
 							</li>
 
@@ -92,7 +106,7 @@
 
 							<li>
 								合同ID：<input type="text" name="contractId"/>
-							</li>
+							</li>-->
 
 							<li>
 								<a class="btn btn-primary btn-rounded btn-sm" onclick="$.table.search()"><i class="fa fa-search"></i>&nbsp;搜索</a>
@@ -143,7 +157,7 @@
 		        },
 				{
 					field : 'id', 
-					title : '',
+					title : '店铺ID',
 					visible: false
 				},
 				{
@@ -178,22 +192,22 @@
 				},
 				{
 					field : 'lng', 
-					title : '',
+					title : '经度',
 					sortable: true
 				},
 				{
 					field : 'lat', 
-					title : '',
+					title : '纬度',
 					sortable: true
 				},
 				{
 					field : 'closed', 
-					title : '是否打烊（手动打烊标示）和营业时间一起使用',
+					title : '是否打烊',
 					sortable: true
 				},
 				{
 					field : 'openTime', 
-					title : '字符串，如：1-5|10:00-14:00，1-5|17:00-22:00，6-7|9:00-24:00  周和时间用“|”分割，周几到周几用“-”分割，多个设置用“，”分割',
+					title : '营业时间',
 					sortable: true
 				},
 				{
@@ -203,12 +217,12 @@
 				},
 				{
 					field : 'images', 
-					title : '商家实景照片URL，json格式 {realimsg:['http://xxx','http://xxx']}',
+					title : '商家实景照片',
 					sortable: true
 				},
 				{
 					field : 'status', 
-					title : '0：冻结状态，1：正常，2：违规关闭，3：店铺到期关闭',
+					title : '商家状态',
 					sortable: true
 				},
 				{
@@ -218,7 +232,7 @@
 				},
 				{
 					field : 'authLong', 
-					title : '授权时长，单位是月',
+					title : '授权时长',
 					sortable: true
 				},
 				{
