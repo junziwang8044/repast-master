@@ -1,0 +1,79 @@
+<!DOCTYPE HTML>
+<html  lang="zh" xmlns:th="http://www.thymeleaf.org">
+<meta charset="utf-8">
+<head th:include="include :: header"></head>
+<body class="white-bg">
+<div class="wrapper wrapper-content animated fadeInRight ibox-content">
+	<form class="form-horizontal m" id="form-shopInformation-editPic" th:object="${shopInformation}">
+		<input id="id" name="id" th:field="*{id}"  type="hidden">
+		<div class="form-group">
+			<label class="col-sm-3 control-label">营业执照图片链接：</label>
+			<div class="col-sm-8">
+				<!--<input type="file" name="file" /> <br />-->
+				<!--<input type="button" onclick="$.operate.uploadFile()" value="uploadTest">-->
+				<img th:src="*{businessLicense}" id="businessLicense" name="businessLicense" style="width: 80px;height: 50px;">
+				<input id="bL" name="bL"  class="form-control" type="file" th:value="*{businessLicense}">
+			</div>
+		</div>
+		<div class="form-group">
+			<label class="col-sm-3 control-label">食品安全许可证图片链接：</label>
+			<div class="col-sm-8">
+				<input id="foodLicense" name="foodLicense" th:field="*{foodLicense}" class="form-control" type="text">
+			</div>
+		</div>
+		<div class="form-group">
+			<label class="col-sm-3 control-label">卫生许可证图片链接：</label>
+			<div class="col-sm-8">
+				<input id="sanitationLicense" name="sanitationLicense" th:field="*{sanitationLicense}" class="form-control" type="text">
+			</div>
+		</div>
+		<div class="form-group">
+			<label class="col-sm-3 control-label">量化考核图片链接：</label>
+			<div class="col-sm-8">
+				<input id="assess" name="assess" th:field="*{assess}" class="form-control" type="text">
+			</div>
+		</div>
+		<!--<div class="form-group">
+			<label class="col-sm-3 control-label">食品安全许可证图片链接：</label>
+			<div class="col-sm-8">
+				<img th:src="*{foodLicense}" id="foodLicense" name="foodLicense" style="width: 80px;height: 50px;">
+				<input id="fL" name="fL"  class="form-control" type="file">
+			</div>
+		</div>
+		<div class="form-group">
+			<label class="col-sm-3 control-label">卫生许可证图片链接：</label>
+			<div class="col-sm-8">
+				<img th:src="*{sanitationLicense}" id="sanitationLicense" name="sanitationLicense" style="width: 80px;height: 50px;">
+				<input id="sL" name="sL"  class="form-control" type="file">
+			</div>
+		</div>
+		<div class="form-group">
+			<label class="col-sm-3 control-label">量化考核图片链接：</label>
+			<div class="col-sm-8">
+				<img th:src="*{assess}" id="assess" name="assess" style="width: 80px;height: 50px;">
+				<input id="ass" name="ass"  class="form-control" type="file">
+			</div>
+		</div>-->
+	</form>
+</div>
+<div th:include="include::footer"></div>
+<script type="text/javascript">
+
+	var prefix = ctx + "system/shopInformation"
+	$("#form-shopInformation-editPic").validate({
+		rules:{
+			xxxx:{
+				required:true,
+			},
+		}
+	});
+
+	function submitHandler() {
+		if ($.validate.form()) {
+			$.operate.save(prefix + "/editPic", $('#form-shopInformation-editPic').serialize());
+		}
+	}
+
+</script>
+</body>
+</html>

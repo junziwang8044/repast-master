@@ -44,6 +44,13 @@ public interface IShopInformationService
      * @return 结果
      */
 	public int updateShopInformation(ShopInformation shopInformation);
+
+	/**
+	 * 编辑店铺的营业执照并保存
+	 * @param shopInformation
+	 * @return
+	 */
+	public int updateShopInfomationPic(ShopInformation shopInformation);
 		
 	/**
      * 删除店铺的基本信息

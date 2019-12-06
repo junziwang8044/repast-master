@@ -8,14 +8,14 @@ import java.util.Date;
 
 /**
  * 店铺的基本表 ums_shop_information
- * 
+ *
  * @author Seven Lee
  * @date 2019-12-04
  */
 public class ShopInformation extends BaseEntity
 {
 	private static final long serialVersionUID = 1L;
-	
+
 	/**  */
 	private Long id;
 	/** 店铺所有者ID */
@@ -61,229 +61,229 @@ public class ShopInformation extends BaseEntity
 	/** 合同ID */
 	private Long contractId;
 
-	public void setId(Long id) 
+	public void setId(Long id)
 	{
 		this.id = id;
 	}
 
-	public Long getId() 
+	public Long getId()
 	{
 		return id;
 	}
-	public void setOwnerId(Long ownerId) 
+	public void setOwnerId(Long ownerId)
 	{
 		this.ownerId = ownerId;
 	}
 
-	public Long getOwnerId() 
+	public Long getOwnerId()
 	{
 		return ownerId;
 	}
-	public void setName(String name) 
+	public void setName(String name)
 	{
 		this.name = name;
 	}
 
-	public String getName() 
+	public String getName()
 	{
 		return name;
 	}
-	public void setProvince(String province) 
+	public void setProvince(String province)
 	{
 		this.province = province;
 	}
 
-	public String getProvince() 
+	public String getProvince()
 	{
 		return province;
 	}
-	public void setCity(String city) 
+	public void setCity(String city)
 	{
 		this.city = city;
 	}
 
-	public String getCity() 
+	public String getCity()
 	{
 		return city;
 	}
-	public void setBorough(String borough) 
+	public void setBorough(String borough)
 	{
 		this.borough = borough;
 	}
 
-	public String getBorough() 
+	public String getBorough()
 	{
 		return borough;
 	}
-	public void setAddress(String address) 
+	public void setAddress(String address)
 	{
 		this.address = address;
 	}
 
-	public String getAddress() 
+	public String getAddress()
 	{
 		return address;
 	}
-	public void setLng(String lng) 
+	public void setLng(String lng)
 	{
 		this.lng = lng;
 	}
 
-	public String getLng() 
+	public String getLng()
 	{
 		return lng;
 	}
-	public void setLat(String lat) 
+	public void setLat(String lat)
 	{
 		this.lat = lat;
 	}
 
-	public String getLat() 
+	public String getLat()
 	{
 		return lat;
 	}
-	public void setClosed(Integer closed) 
+	public void setClosed(Integer closed)
 	{
 		this.closed = closed;
 	}
 
-	public Integer getClosed() 
+	public Integer getClosed()
 	{
 		return closed;
 	}
-	public void setOpenTime(String openTime) 
+	public void setOpenTime(String openTime)
 	{
 		this.openTime = openTime;
 	}
 
-	public String getOpenTime() 
+	public String getOpenTime()
 	{
 		return openTime;
 	}
-	public void setPhone(String phone) 
+	public void setPhone(String phone)
 	{
 		this.phone = phone;
 	}
 
-	public String getPhone() 
+	public String getPhone()
 	{
 		return phone;
 	}
-	public void setImages(String images) 
+	public void setImages(String images)
 	{
 		this.images = images;
 	}
 
-	public String getImages() 
+	public String getImages()
 	{
 		return images;
 	}
-	public void setStatus(Integer status) 
+	public void setStatus(Integer status)
 	{
 		this.status = status;
 	}
 
-	public Integer getStatus() 
+	public Integer getStatus()
 	{
 		return status;
 	}
-	public void setAuthStartTime(Date authStartTime) 
+	public void setAuthStartTime(Date authStartTime)
 	{
 		this.authStartTime = authStartTime;
 	}
 
-	public Date getAuthStartTime() 
+	public Date getAuthStartTime()
 	{
 		return authStartTime;
 	}
-	public void setAuthLong(Integer authLong) 
+	public void setAuthLong(Integer authLong)
 	{
 		this.authLong = authLong;
 	}
 
-	public Integer getAuthLong() 
+	public Integer getAuthLong()
 	{
 		return authLong;
 	}
-	public void setTemplateId(Integer templateId) 
+	public void setTemplateId(Integer templateId)
 	{
 		this.templateId = templateId;
 	}
 
-	public Integer getTemplateId() 
+	public Integer getTemplateId()
 	{
 		return templateId;
 	}
-	public void setBusinessLicense(String businessLicense) 
+	public void setBusinessLicense(String businessLicense)
 	{
 		this.businessLicense = businessLicense;
 	}
 
-	public String getBusinessLicense() 
+	public String getBusinessLicense()
 	{
 		return businessLicense;
 	}
-	public void setFoodLicense(String foodLicense) 
+	public void setFoodLicense(String foodLicense)
 	{
 		this.foodLicense = foodLicense;
 	}
 
-	public String getFoodLicense() 
+	public String getFoodLicense()
 	{
 		return foodLicense;
 	}
-	public void setSanitationLicense(String sanitationLicense) 
+	public void setSanitationLicense(String sanitationLicense)
 	{
 		this.sanitationLicense = sanitationLicense;
 	}
 
-	public String getSanitationLicense() 
+	public String getSanitationLicense()
 	{
 		return sanitationLicense;
 	}
-	public void setAssess(String assess) 
+	public void setAssess(String assess)
 	{
 		this.assess = assess;
 	}
 
-	public String getAssess() 
+	public String getAssess()
 	{
 		return assess;
 	}
-	public void setContractId(Long contractId) 
+	public void setContractId(Long contractId)
 	{
 		this.contractId = contractId;
 	}
 
-	public Long getContractId() 
+	public Long getContractId()
 	{
 		return contractId;
 	}
 
-    public String toString() {
-        return new ToStringBuilder(this,ToStringStyle.MULTI_LINE_STYLE)
-            .append("id", getId())
-            .append("ownerId", getOwnerId())
-            .append("name", getName())
-            .append("province", getProvince())
-            .append("city", getCity())
-            .append("borough", getBorough())
-            .append("address", getAddress())
-            .append("lng", getLng())
-            .append("lat", getLat())
-            .append("closed", getClosed())
-            .append("openTime", getOpenTime())
-            .append("phone", getPhone())
-            .append("images", getImages())
-            .append("status", getStatus())
-            .append("authStartTime", getAuthStartTime())
-            .append("authLong", getAuthLong())
-            .append("templateId", getTemplateId())
-            .append("businessLicense", getBusinessLicense())
-            .append("foodLicense", getFoodLicense())
-            .append("sanitationLicense", getSanitationLicense())
-            .append("assess", getAssess())
-            .append("contractId", getContractId())
-            .toString();
-    }
+	public String toString() {
+		return new ToStringBuilder(this,ToStringStyle.MULTI_LINE_STYLE)
+				.append("id", getId())
+				.append("ownerId", getOwnerId())
+				.append("name", getName())
+				.append("province", getProvince())
+				.append("city", getCity())
+				.append("borough", getBorough())
+				.append("address", getAddress())
+				.append("lng", getLng())
+				.append("lat", getLat())
+				.append("closed", getClosed())
+				.append("openTime", getOpenTime())
+				.append("phone", getPhone())
+				.append("images", getImages())
+				.append("status", getStatus())
+				.append("authStartTime", getAuthStartTime())
+				.append("authLong", getAuthLong())
+				.append("templateId", getTemplateId())
+				.append("businessLicense", getBusinessLicense())
+				.append("foodLicense", getFoodLicense())
+				.append("sanitationLicense", getSanitationLicense())
+				.append("assess", getAssess())
+				.append("contractId", getContractId())
+				.toString();
+	}
 }

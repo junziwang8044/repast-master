@@ -90,6 +90,30 @@ public class ShopInformationController extends BaseController
 	}
 
 	/**
+	 * 店铺的营业执照
+	 */
+	@GetMapping("/editPic/{id}")
+	public String exitPic(@PathVariable("id") Long id, ModelMap mmap)
+	{
+		ShopInformation shopInformation = shopInformationService.selectShopInformationById(id);
+		mmap.put("shopInformation", shopInformation);
+		return prefix + "/editPic";
+	}
+
+	/**
+	 * 编辑店铺的营业执照并保存
+	 */
+	@RequiresPermissions("system:shopInformation:editPic")
+	@Log(title = "店铺营业执照", businessType = BusinessType.UPDATE)
+	@PostMapping("/editPic")
+	@ResponseBody
+	public AjaxResult exitPicSave(ShopInformation shopInformation)
+	{
+		System.out.println(shopInformation);
+		return toAjax(shopInformationService.updateShopInfomationPic(shopInformation));
+	}
+
+	/**
 	 * 修改店铺的基本
 	 */
 	@GetMapping("/edit/{id}")
@@ -108,7 +132,7 @@ public class ShopInformationController extends BaseController
 	@PostMapping("/edit")
 	@ResponseBody
 	public AjaxResult editSave(ShopInformation shopInformation)
-	{		
+	{
 		return toAjax(shopInformationService.updateShopInformation(shopInformation));
 	}
 	
@@ -123,5 +147,6 @@ public class ShopInformationController extends BaseController
 	{		
 		return toAjax(shopInformationService.deleteShopInformationByIds(ids));
 	}
-	
+
+
 }

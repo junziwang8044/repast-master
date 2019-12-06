@@ -31,6 +31,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	
 	<sql id="selectShopInformationVo">
         select id, owner_id, name, province, city, borough, address, lng, lat, closed, open_time, phone, images, status, auth_start_time, auth_long, template_id, business_license, food_license, sanitation_license, assess, contract_id from ums_shop_information
+        /*select id,(select su.user_name from sys_user su where su.user_id = usi.owner_id ) owner_id, name, province, city, borough, address, lng, lat, closed, open_time, phone, images, status, auth_start_time, auth_long, template_id, business_license, food_license, sanitation_license, assess, contract_id from ums_shop_information usi*/
     </sql>
 	
     <select id="selectShopInformationList" parameterType="ShopInformation" resultMap="ShopInformationResult">
@@ -145,8 +146,18 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         </trim>
         where id = #{id}
     </update>
+    <update id="updateShopInformationPic" parameterType="ShopInformation">
+        update ums_shop_information
+        <trim prefix="SET" suffixOverrides=",">
+            <if test="businessLicense != null  and businessLicense != ''  ">business_license = #{businessLicense},</if>
+            <if test="foodLicense != null  and foodLicense != ''  ">food_license = #{foodLicense},</if>
+            <if test="sanitationLicense != null  and sanitationLicense != ''  ">sanitation_license = #{sanitationLicense},</if>
+            <if test="assess != null  and assess != ''  ">assess = #{assess},</if>
+        </trim>
+        where id = #{id}
+    </update>
 
-	<delete id="deleteShopInformationById" parameterType="Long">
+    <delete id="deleteShopInformationById" parameterType="Long">
         delete from ums_shop_information where id = #{id}
     </delete>
 	

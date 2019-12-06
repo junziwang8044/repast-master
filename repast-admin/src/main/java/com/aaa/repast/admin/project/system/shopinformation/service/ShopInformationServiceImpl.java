@@ -70,6 +70,16 @@ public class ShopInformationServiceImpl implements IShopInformationService
 	}
 
 	/**
+	 * 编辑店铺的营业执照并保存
+	 * @param shopInformation
+	 * @return
+	 */
+	@Override
+	public int updateShopInfomationPic(ShopInformation shopInformation) {
+		return shopInformationMapper.updateShopInformationPic(shopInformation);
+	}
+
+	/**
      * 删除店铺的基本对象
      * 
      * @param ids 需要删除的数据ID

@@ -36,6 +36,11 @@ public interface ShopInformationMapper
      * @return 结果
      */
 	public int insertShopInformation(ShopInformation shopInformation);
+
+	/**
+	 * 编辑店铺的营业执照并保存
+	 */
+	public int updateShopInformationPic(ShopInformation shopInformation);
 	
 	/**
      * 修改店铺的基本
@@ -60,5 +65,5 @@ public interface ShopInformationMapper
      * @return 结果
      */
 	public int deleteShopInformationByIds(String[] ids);
-	
+
 }
