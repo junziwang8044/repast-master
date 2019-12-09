@@ -9,7 +9,7 @@
 			<div class="form-group">	
 				<label class="col-sm-3 control-label">店铺所有者ID：</label>
 				<div class="col-sm-8">
-					<input id="ownerId" name="ownerId" th:field="*{ownerId}" class="form-control" type="text">
+					<input id="ownerId" name="ownerId" th:field="*{ownerId}" class="form-control" type="text" readonly="readonly">
 				</div>
 			</div>
 			<div class="form-group">	
@@ -42,7 +42,7 @@
 					<input id="address" name="address" th:field="*{address}" class="form-control" type="text">
 				</div>
 			</div>
-			<div class="form-group">	
+			<!--<div class="form-group">
 				<label class="col-sm-3 control-label">：</label>
 				<div class="col-sm-8">
 					<input id="lng" name="lng" th:field="*{lng}" class="form-control" type="text">
@@ -53,17 +53,21 @@
 				<div class="col-sm-8">
 					<input id="lat" name="lat" th:field="*{lat}" class="form-control" type="text">
 				</div>
-			</div>
+			</div>-->
 			<div class="form-group">	
-				<label class="col-sm-3 control-label">是否打烊（手动打烊标示）和营业时间一起使用：</label>
+				<label class="col-sm-3 control-label">是否打烊：</label>
 				<div class="col-sm-8">
-					<input id="closed" name="closed" th:field="*{closed}" class="form-control" type="text">
+					<!--<input id="closed" name="closed" th:field="*{closed}" class="form-control" type="text">-->
+					<select id="closed" name="closed" class="form-control" type="text">
+						<option value="0">营业中</option>
+						<option value="1">打烊</option>
+					</select>
 				</div>
 			</div>
 			<div class="form-group">	
-				<label class="col-sm-3 control-label">字符串，如：1-5|10:00-14:00，1-5|17:00-22:00，6-7|9:00-24:00  周和时间用“|”分割，周几到周几用“-”分割，多个设置用“，”分割：</label>
+				<label class="col-sm-3 control-label">营业时间：</label>
 				<div class="col-sm-8">
-					<input id="openTime" name="openTime" th:field="*{openTime}" class="form-control" type="text">
+					<input id="openTime" name="openTime" th:field="*{openTime}" class="form-control" type="date">
 				</div>
 			</div>
 			<div class="form-group">	
@@ -73,57 +77,39 @@
 				</div>
 			</div>
 			<div class="form-group">	
-				<label class="col-sm-3 control-label">商家实景照片URL，json格式 {realimsg:['http://xxx','http://xxx']}：</label>
+				<label class="col-sm-3 control-label">商家实景照片：</label>
 				<div class="col-sm-8">
-					<input id="images" name="images" th:field="*{images}" class="form-control" type="text">
+					<input id="images" name="images" th:field="*{images}" class="form-control" type="file">
 				</div>
 			</div>
 			<div class="form-group">	
-				<label class="col-sm-3 control-label">0：冻结状态，1：正常，2：违规关闭，3：店铺到期关闭：</label>
+				<label class="col-sm-3 control-label">店铺状态</label>
 				<div class="col-sm-8">
-					<input id="status" name="status" th:field="*{status}" class="form-control" type="text">
+					<!--<input id="status" name="status" th:field="*{status}" class="form-control" type="text">-->
+					<select id="status" name="status" class="form-control" type="text">
+						<option value="0">冻结状态</option>
+						<option value="1">正常</option>
+						<option value="2">违规关闭</option>
+						<option value="3">店铺到期关闭</option>
+					</select>
 				</div>
 			</div>
 			<div class="form-group">	
 				<label class="col-sm-3 control-label">授权开始时间：</label>
 				<div class="col-sm-8">
-					<input id="authStartTime" name="authStartTime" th:field="*{authStartTime}" class="form-control" type="text">
+					<input id="authStartTime" name="authStartTime" th:field="*{authStartTime}" class="form-control" type="date">
 				</div>
 			</div>
 			<div class="form-group">	
 				<label class="col-sm-3 control-label">授权时长，单位是月：</label>
 				<div class="col-sm-8">
-					<input id="authLong" name="authLong" th:field="*{authLong}" class="form-control" type="text">
+					<input id="authLong" name="authLong" th:field="*{authLong}" class="form-control" type="date">
 				</div>
 			</div>
 			<div class="form-group">	
 				<label class="col-sm-3 control-label">授权版本的ID：</label>
 				<div class="col-sm-8">
 					<input id="templateId" name="templateId" th:field="*{templateId}" class="form-control" type="text">
-				</div>
-			</div>
-			<div class="form-group">	
-				<label class="col-sm-3 control-label">营业执照图片链接：</label>
-				<div class="col-sm-8">
-					<input id="businessLicense" name="businessLicense" th:field="*{businessLicense}" class="form-control" type="text">
-				</div>
-			</div>
-			<div class="form-group">	
-				<label class="col-sm-3 control-label">食品安全许可证图片链接：</label>
-				<div class="col-sm-8">
-					<input id="foodLicense" name="foodLicense" th:field="*{foodLicense}" class="form-control" type="text">
-				</div>
-			</div>
-			<div class="form-group">	
-				<label class="col-sm-3 control-label">卫生许可证图片链接：</label>
-				<div class="col-sm-8">
-					<input id="sanitationLicense" name="sanitationLicense" th:field="*{sanitationLicense}" class="form-control" type="text">
-				</div>
-			</div>
-			<div class="form-group">	
-				<label class="col-sm-3 control-label">量化考核图片链接：</label>
-				<div class="col-sm-8">
-					<input id="assess" name="assess" th:field="*{assess}" class="form-control" type="text">
 				</div>
 			</div>
 			<div class="form-group">	

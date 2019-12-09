@@ -15,6 +15,12 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	<sql id="selectShopFacilityVo">
         select id, shop_id, title, description, icon from ums_shop_facility
     </sql>
+
+
+    <!--<sql id="selectShopFacility">
+        select id,(select usi.name from ums_shop_information usi where usi.id = usf.shop_id) shop_id, title, description, icon from ums_shop_facility usf
+    </sql>-->
+
 	
     <select id="selectShopFacilityList" parameterType="ShopFacility" resultMap="ShopFacilityResult">
         <include refid="selectShopFacilityVo"/>
@@ -31,7 +37,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         <include refid="selectShopFacilityVo"/>
         where id = #{id}
     </select>
-        
+
     <insert id="insertShopFacility" parameterType="ShopFacility">
         insert into ums_shop_facility
 		<trim prefix="(" suffix=")" suffixOverrides=",">
